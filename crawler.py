@@ -24,7 +24,7 @@ def links_in_html(content, visited, folder, depth=0):
 				target = requests.get(target_link)
 				print('%s %s' % (target.status_code, target_link))
 				# print(target.url, '\n')
-				if 'https://www.site.ru' not in target.url and target.status_code != '404':
+				if 'https://www.site.ru' not in target.url and target.status_code != 404:
 					print(target.url, target.status_code, '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 				if r.status_code == 200:
 					links_in_html(r.content, visited, folder, depth=depth)
